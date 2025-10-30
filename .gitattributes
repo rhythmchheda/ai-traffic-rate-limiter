@@ -1,32 +1,32 @@
 # --- GitHub Linguist Override Configuration ---
 
-# ✅ Backend (Go)
+# 🦫 Backend (Go) — highest priority
 backend/**/*.go linguist-detectable=true linguist-language=Go
+*.go linguist-detectable=true linguist-language=Go
 
-# ✅ Frontend (TypeScript)
+# 🧠 Machine Learning (Python) — second priority
+ml/**/*.py linguist-detectable=true linguist-language=Python
+ml/**/*.ipynb linguist-detectable=true linguist-language=Python
+
+# 💻 Frontend (TypeScript) — third priority
 frontend/src/**/*.ts linguist-detectable=true linguist-language=TypeScript
 frontend/src/**/*.tsx linguist-detectable=true linguist-language=TypeScript
 
-# 🧹 Ignore build/transpiled JS to prevent "JavaScript" dominance
+# 🧹 Ignore build artifacts, JS, configs, etc.
 frontend/**/*.js linguist-detectable=false
 frontend/**/*.jsx linguist-detectable=false
 frontend/build/** linguist-detectable=false
 frontend/node_modules/** linguist-detectable=false
-
-# ✅ Machine Learning (Python)
-ml/**/*.py linguist-detectable=true linguist-language=Python
-ml/**/*.ipynb linguist-detectable=true linguist-language=Python
-
-# ⚙️ Ignore configuration & dependency files
+*.json linguist-detectable=false
 *.yml linguist-detectable=false
 *.yaml linguist-detectable=false
-*.json linguist-detectable=false
 *.lock linguist-detectable=false
 *.env linguist-detectable=false
-Dockerfile linguist-detectable=false
 *.css linguist-detectable=false
 *.html linguist-detectable=false
 *.md linguist-detectable=false
+Dockerfile linguist-detectable=false
 
-# 🧠 Final weighting hint
-# TypeScript ~50%, Go ~30%, Python ~20%
+# 🧭 Custom language weighting hint
+# GitHub Linguist will now likely show:
+# Go ~60%, Python ~25%, TypeScript ~15%
