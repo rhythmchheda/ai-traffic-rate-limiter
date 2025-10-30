@@ -2,7 +2,7 @@
 
 A full-stack AI-powered Rate Limiting System with real-time monitoring and analytics. This project integrates Go, Snowflake, Redis, and a React + Tailwind Dashboard to predict and control user request flow intelligently.
 
-![AI Traffic Rate Limiter Dashboard](images/airl_img%206.png)
+![AI Traffic Rate Limiter Dashboard](images/airl_img%205.png)
 
 ---
 
@@ -164,3 +164,4 @@ Contributions, issues, and feature requests are welcome! Feel free to check the 
 ## ⭐ Show your support
 
 Give a ⭐️ if this project helped you!
+
