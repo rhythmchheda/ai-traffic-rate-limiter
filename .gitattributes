@@ -1,0 +1,12 @@
+# .gitattributes
+
+# Ignore build and dependency files from language stats
+frontend/build/* linguist-vendored
+frontend/node_modules/* linguist-vendored
+backend/go.sum linguist-generated
+backend/go.mod linguist-generated
+
+# Explicitly set languages for folders
+backend/* linguist-language=Go
+frontend/src/* linguist-language=TypeScript
+ml/* linguist-language=Python
