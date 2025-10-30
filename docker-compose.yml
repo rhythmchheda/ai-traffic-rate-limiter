@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: ./backend
+    container_name: ai-rate-limiter-backend
+    ports:
+      - "8080:8080"
+    env_file:
+      - ./backend/.env  # Not committed to Git
+    depends_on:
+      - redis
+
+  redis:
+    image: redis:alpine
+    container_name: redis-server
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: ai-rate-limiter-frontend
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
+    depends_on:
+      - backend
+
+volumes:
+  redis_data:

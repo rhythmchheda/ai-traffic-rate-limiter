@@ -1,0 +1,8 @@
+# Environment files
+.env
+*.env
+
+# Build and cache folders
+node_modules
+dist
+build
