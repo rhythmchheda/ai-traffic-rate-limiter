@@ -1,28 +1,32 @@
-# --- AI Traffic Rate Limiter: GitHub Linguist Configuration ---
+# --- GitHub Linguist Override Configuration ---
 
-# 🧠 Backend (Go)
+# ✅ Backend (Go)
 backend/**/*.go linguist-detectable=true linguist-language=Go
-backend/** linguist-detectable=true linguist-language=Go
 
-# ⚙️ Frontend (React + TypeScript)
-frontend/src/**/*.tsx linguist-detectable=true linguist-language=TypeScript
+# ✅ Frontend (TypeScript)
 frontend/src/**/*.ts linguist-detectable=true linguist-language=TypeScript
-frontend/src/**/*.js linguist-detectable=true linguist-language=TypeScript
-frontend/src/**/*.jsx linguist-detectable=true linguist-language=TypeScript
-frontend/**/*.css linguist-detectable=false
-frontend/**/*.json linguist-detectable=false
+frontend/src/**/*.tsx linguist-detectable=true linguist-language=TypeScript
 
-# 🧩 Machine Learning (Python)
+# 🧹 Ignore build/transpiled JS to prevent "JavaScript" dominance
+frontend/**/*.js linguist-detectable=false
+frontend/**/*.jsx linguist-detectable=false
+frontend/build/** linguist-detectable=false
+frontend/node_modules/** linguist-detectable=false
+
+# ✅ Machine Learning (Python)
 ml/**/*.py linguist-detectable=true linguist-language=Python
 ml/**/*.ipynb linguist-detectable=true linguist-language=Python
-ml/**/*.txt linguist-detectable=false
 
-# 🐳 Ignore build/config files
+# ⚙️ Ignore configuration & dependency files
 *.yml linguist-detectable=false
 *.yaml linguist-detectable=false
+*.json linguist-detectable=false
 *.lock linguist-detectable=false
 *.env linguist-detectable=false
 Dockerfile linguist-detectable=false
+*.css linguist-detectable=false
+*.html linguist-detectable=false
+*.md linguist-detectable=false
 
-# 📦 Focus percentages (approximation hint for GitHub Linguist)
-# 40% Go, 40% TypeScript, 20% Python
+# 🧠 Final weighting hint
+# TypeScript ~50%, Go ~30%, Python ~20%
